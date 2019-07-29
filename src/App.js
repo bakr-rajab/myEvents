@@ -1,28 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Header from './component/header_footer/Header';
+import './resources/styles.css';
+
+import Featured from "./component/featured/Index";
+import VenueNfo from "./component/venueNfo/Index";
+import HighLights from "./component/highlights/Index";
+import Pricing from "./component/pricing/Index";
+import Location from "./component/location/Index";
+import Footer from "./component/header_footer/Footer";
+import SignUp from "./component/form/SignUp";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    state={
+        logo:'Student Pls Ple',
+        title:'Academic EVENTS',
+
+    }
+    render() {
+
+        return (
+            <div className="App" style={{height: '1500px', background: 'cornflowerblue', scrollBehavior: 'smooth'}}>
+                <Header appName={this.state.logo}
+                        appTitle={this.state.title}
+                />
+                <Featured/>
+                <VenueNfo/>
+                <hr/>
+               <SignUp/>
+                <HighLights/>
+                <Pricing/>
+                <Location/>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;
